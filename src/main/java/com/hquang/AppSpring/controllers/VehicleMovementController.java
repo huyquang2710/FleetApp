@@ -19,6 +19,11 @@ import com.hquang.AppSpring.services.VehicleService;
 @Controller
 public class VehicleMovementController {
 	
+	@GetMapping("/vehicleMovement")
+	public String getVehicleMovement() {
+		return "VehicleMovement";
+	}
+	
 	/*
 	 * @Autowired private VehicleMovementService vehicleMovementService;
 	 * 
