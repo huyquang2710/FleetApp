@@ -15,7 +15,7 @@ public class JobTitleService {
 	JobTitleRepository repository;
 	
 	//Return List add counties
-	public List<JobTitle> getFindAllJobTitles() {
+	public List<JobTitle> findAll() {
 		return repository.findAll();
 	}
 	

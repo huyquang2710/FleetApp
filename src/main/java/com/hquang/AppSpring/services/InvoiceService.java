@@ -15,7 +15,7 @@ public class InvoiceService {
 	InvoiceRepository repository;
 	
 	//Return List add counties
-	public List<Invoice> getFindAllInvoices() {
+	public List<Invoice> findAll() {
 		return repository.findAll();
 	}
 	

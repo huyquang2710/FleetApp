@@ -15,7 +15,7 @@ public class EmployeeService {
 	EmployeeRepository repository;
 	
 	//Return List add counties
-	public List<Employee> getFindAllEmployees() {
+	public List<Employee> findAll() {
 		return repository.findAll();
 	}
 	

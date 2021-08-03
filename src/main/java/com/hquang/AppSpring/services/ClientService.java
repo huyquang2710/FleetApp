@@ -15,7 +15,7 @@ public class ClientService {
 	ClientRepository repository;
 
 	// Return List add clients
-	public List<Client> getFindAllClients() {
+	public List<Client> findAll() {
 		return repository.findAll();
 	}
 

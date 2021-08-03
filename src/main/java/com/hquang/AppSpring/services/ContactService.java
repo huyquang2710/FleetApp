@@ -15,7 +15,7 @@ public class ContactService {
 	ContactRepository repository;
 	
 	//Return List add counties
-	public List<Contact> getFindAllContacts() {
+	public List<Contact> findAll() {
 		return repository.findAll();
 	}
 	

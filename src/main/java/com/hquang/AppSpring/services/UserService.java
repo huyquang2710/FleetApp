@@ -15,7 +15,7 @@ public class UserService {
 	UserRepository repository;
 	
 	//Return List add counties
-	public List<User> getFindAllUsers() {
+	public List<User> findAll() {
 		return repository.findAll();
 	}
 	

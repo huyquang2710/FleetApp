@@ -15,7 +15,7 @@ public class StateService {
 	StateRepository repository;
 	
 	//Return List add states
-	public List<State> getFindAllStates() {
+	public List<State> findAll() {
 		return repository.findAll();
 	}
 	

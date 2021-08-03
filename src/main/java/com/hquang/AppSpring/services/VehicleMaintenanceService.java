@@ -15,7 +15,7 @@ public class VehicleMaintenanceService {
 	VehicleMaintenanceRepository repository;
 	
 	//Return List add counties
-	public List<VehicleMaintenance> getFindAllVehicleMaintenances() {
+	public List<VehicleMaintenance> findAll() {
 		return repository.findAll();
 	}
 	

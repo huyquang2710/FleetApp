@@ -15,7 +15,7 @@ public class SupplierService {
 	SupplierRepository repository;
 	
 	//Return List add counties
-	public List<Supplier> getFindAllSuppliers() {
+	public List<Supplier> findAll() {
 		return repository.findAll();
 	}
 	

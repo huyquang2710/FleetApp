@@ -16,7 +16,7 @@ public class CountryService {
 	CountryRepository repository;
 	
 	//Return List add counties
-	public List<Country> getFindAllCountries() {
+	public List<Country> findAll() {
 		return repository.findAll();
 	}
 	

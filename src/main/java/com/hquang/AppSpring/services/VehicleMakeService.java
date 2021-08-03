@@ -15,7 +15,7 @@ public class VehicleMakeService {
 	VehicleMakeRepository repository;
 	
 	//Return List add counties
-	public List<VehicleMake> getFindAllVehicleMakes() {
+	public List<VehicleMake> findAll() {
 		return repository.findAll();
 	}
 	

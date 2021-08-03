@@ -15,7 +15,7 @@ public class VehicleMovementService {
 	VehicleMovementRepository repository;
 	
 	//Return List add counties
-	public List<VehicleMovement> getFindAllVehicleMovements() {
+	public List<VehicleMovement> findAll() {
 		return repository.findAll();
 	}
 	

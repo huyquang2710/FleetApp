@@ -15,7 +15,7 @@ public class EmployeeTypeService {
 	EmployeeTypeRepository repository;
 	
 	//Return List add counties
-	public List<EmployeeType> getFindAllEmployeeTypes() {
+	public List<EmployeeType> findAll() {
 		return repository.findAll();
 	}
 	

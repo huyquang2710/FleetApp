@@ -15,7 +15,7 @@ public class VehicleModelService {
 	VehicleModelRepository repository;
 	
 	//Return List add counties
-	public List<VehicleModel> getFindAllVehicleModels() {
+	public List<VehicleModel> findAll() {
 		return repository.findAll();
 	}
 	
