@@ -29,5 +29,9 @@ public class CountryService {
 	public Optional<Country> findById(int id) {
 		return repository.findById(id);
 	}
+	//Delete
+	public void delete(int id) {
+		repository.deleteById(id);
+	}
 
 }
