@@ -1,6 +1,7 @@
 package com.hquang.AppSpring.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,11 @@ public class CountryService {
 	//Save a country
 	public void save(Country country) {
 		repository.save(country);
+	}
+	
+	//Get by ID
+	public Optional<Country> findById(int id) {
+		return repository.findById(id);
 	}
 
 }
