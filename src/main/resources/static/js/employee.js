@@ -72,8 +72,6 @@ $('document').ready(function() {
 });
 
 
-
-
 //function fcnUpload(url){
 //	console.log("Upload button was clicked");
 //	//var href = $(this).attr('href');

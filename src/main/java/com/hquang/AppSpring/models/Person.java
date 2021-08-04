@@ -50,4 +50,5 @@ public class Person {
 	private String mobile;
 	private String email;
 	private String photo;
+	private String lastname1;
 }
