@@ -7,11 +7,10 @@ $('document').ready(function() {
 	$('.table .btn-primary').on('click',function(event){		
 		event.preventDefault();		
 		var href= $(this).attr('href');		
-		$.get(href, function(state, status){
-			$('#idEdit').val(state.id);
-			$('#ddlCountryEdit').val(state.countryid);
-			$('#nameEdit').val(state.name);
-			$('#detailsEdit').val(state.details);
+		$.get(href, function(vehicleModel, status){
+			$('#idEdit').val(vehicleModel.id);
+			$('#descriptionEdit').val(vehicleModel.description);
+			$('#detailsEdit').val(vehicleModel.details);
 		});			
 		$('#editModal').modal();		
 	});
@@ -19,13 +18,12 @@ $('document').ready(function() {
 	$('.table #detailsButton').on('click',function(event) {
 		event.preventDefault();		
 		var href= $(this).attr('href');		
-		$.get(href, function(state, status){
-			$('#idDetails').val(state.id);
-			$('#ddlCountryDetails').val(state.countryid);			
-			$('#nameDetails').val(state.name);
-			$('#detailsDetails').val(state.details);
-			$('#lastModifiedByDetails').val(state.lastModifiedBy);
-			$('#lastModifiedDateDetails').val(state.lastModifiedDate.substr(0,19).replace("T", " "));
+		$.get(href, function(vehicleModel, status){
+			$('#idDetails').val(vehicleModel.id);
+			$('#descriptionDetails').val(vehicleModel.description);
+			$('#detailsDetails').val(vehicleModel.details);
+			$('#lastModifiedByDetails').val(vehicleModel.lastModifiedBy);
+			$('#lastModifiedDateDetails').val(vehicleModel.lastModifiedDate.substr(0,19).replace("T", " "));
 		});			
 		$('#detailsModal').modal();		
 	});	

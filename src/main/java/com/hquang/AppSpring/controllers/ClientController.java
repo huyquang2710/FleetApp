@@ -29,7 +29,7 @@ public class ClientController {
 		model.addAttribute("countries", countryService.findAll());
 		model.addAttribute("states", stateService.findAll());
 		model.addAttribute("clients", clientService.findAll());
-		return "client";
+		return "Client";
 	}	
 	
 	@RequestMapping("clients/findById") 

@@ -7,11 +7,10 @@ $('document').ready(function() {
 	$('.table .btn-primary').on('click',function(event){		
 		event.preventDefault();		
 		var href= $(this).attr('href');		
-		$.get(href, function(state, status){
-			$('#idEdit').val(state.id);
-			$('#ddlCountryEdit').val(state.countryid);
-			$('#nameEdit').val(state.name);
-			$('#detailsEdit').val(state.details);
+		$.get(href, function(jobTitle, status){
+			$('#idEdit').val(jobTitle.id);
+			$('#descriptionEdit').val(jobTitle.description);
+			$('#detailsEdit').val(jobTitle.details);
 		});			
 		$('#editModal').modal();		
 	});
@@ -19,13 +18,12 @@ $('document').ready(function() {
 	$('.table #detailsButton').on('click',function(event) {
 		event.preventDefault();		
 		var href= $(this).attr('href');		
-		$.get(href, function(state, status){
-			$('#idDetails').val(state.id);
-			$('#ddlCountryDetails').val(state.countryid);			
-			$('#nameDetails').val(state.name);
-			$('#detailsDetails').val(state.details);
-			$('#lastModifiedByDetails').val(state.lastModifiedBy);
-			$('#lastModifiedDateDetails').val(state.lastModifiedDate.substr(0,19).replace("T", " "));
+		$.get(href, function(jobTitle, status){
+			$('#idDetails').val(jobTitle.id);
+			$('#descriptionDetails').val(jobTitle.description);
+			$('#detailsDetails').val(jobTitle.details);
+			$('#lastModifiedByDetails').val(jobTitle.lastModifiedBy);
+			$('#lastModifiedDateDetails').val(jobTitle.lastModifiedDate.substr(0,19).replace("T", " "));
 		});			
 		$('#detailsModal').modal();		
 	});	

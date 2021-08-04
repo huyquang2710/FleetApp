@@ -7,11 +7,10 @@ $('document').ready(function() {
 	$('.table .btn-primary').on('click',function(event){		
 		event.preventDefault();		
 		var href= $(this).attr('href');		
-		$.get(href, function(state, status){
-			$('#idEdit').val(state.id);
-			$('#ddlCountryEdit').val(state.countryid);
-			$('#nameEdit').val(state.name);
-			$('#detailsEdit').val(state.details);
+		$.get(href, function(invoiceStatus, status){
+			$('#idEdit').val(invoiceStatus.id);
+			$('#descriptionEdit').val(invoiceStatus.description);
+			$('#detailsEdit').val(invoiceStatus.details);
 		});			
 		$('#editModal').modal();		
 	});
@@ -19,13 +18,12 @@ $('document').ready(function() {
 	$('.table #detailsButton').on('click',function(event) {
 		event.preventDefault();		
 		var href= $(this).attr('href');		
-		$.get(href, function(state, status){
-			$('#idDetails').val(state.id);
-			$('#ddlCountryDetails').val(state.countryid);			
-			$('#nameDetails').val(state.name);
-			$('#detailsDetails').val(state.details);
-			$('#lastModifiedByDetails').val(state.lastModifiedBy);
-			$('#lastModifiedDateDetails').val(state.lastModifiedDate.substr(0,19).replace("T", " "));
+		$.get(href, function(invoiceStatus, status){
+			$('#idDetails').val(invoiceStatus.id);
+			$('#descriptionDetails').val(invoiceStatus.description);
+			$('#detailsDetails').val(invoiceStatus.details);
+			$('#lastModifiedByDetails').val(invoiceStatus.lastModifiedBy);
+			$('#lastModifiedDateDetails').val(invoiceStatus.lastModifiedDate.substr(0,19).replace("T", " "));
 		});			
 		$('#detailsModal').modal();		
 	});	
