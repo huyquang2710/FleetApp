@@ -27,7 +27,7 @@ $('document').ready(function() {
 			
 			var invoiceDate = invoice.invoiceDate.substr(0,10);
 			$('#invoiceDateDetails').val(invoiceDate);
-			$('#ddlStatusDetails').val(invoice.invoicestatusid);
+			$('#ddlInvoiceStatusEdit').val(invoice.invoicestatusid);
 			$('#remarksDetails').val(invoice.remarks);
 			$('#lastModifiedByDetails').val(invoice.lastModifiedBy);
 			$('#lastModifiedDateDetails').val(invoice.lastModifiedDate.substr(0,19).replace("T", " "));

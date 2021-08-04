@@ -33,7 +33,7 @@ public class Invoice {
 	
 	@ManyToOne
 	@JoinColumn(name="invoicestatusid", insertable=false, updatable=false)	
-	private InvoiceStatus invoiceStatus;
+	private InvoiceStatus invoicestatus;
 	private Integer invoicestatusid;
 	
 	@ManyToOne
