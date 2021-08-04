@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -41,6 +42,11 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
 	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();
 	}
+		
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 	@Autowired
 	UserDetailsService detailsService;
 	
@@ -49,7 +55,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
 		
 		provider.setUserDetailsService(detailsService);
-		provider.setPasswordEncoder(passwordEncoder());
+		provider.setPasswordEncoder(bCryptPasswordEncoder());
 		return provider;
 	}
 }
