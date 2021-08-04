@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.hquang.AppSpring.models.User;
 import com.hquang.AppSpring.services.UserService;
@@ -23,32 +25,14 @@ public class UserController {
 	public String findAll(Model model){		
 		return "user";
 	}	
-	
-	@RequestMapping("users/findById") 
-	@ResponseBody
-	public Optional<User> findById(Integer id)
-	{
-		return userService.findById(id);
-	}
+
 	
 	//Add User
 	@PostMapping(value="users/addNew")
-	public String addNew(User user) {
+	public RedirectView addNew(User user, RedirectAttributes redir) {
 		userService.save(user);
-		return "redirect:/users";
-	}	
-	
-	@RequestMapping(value="users/update", method = {RequestMethod.PUT, RequestMethod.GET})
-	public String update(User user) {
-		userService.save(user);
-		return "redirect:/users";
+		RedirectView redirectView = new RedirectView("/login", true);
+		redir.addFlashAttribute("message", "You successfully Registered!!! You can login");
+		return redirectView;
 	}
-	
-	@RequestMapping(value="users/delete", method = {RequestMethod.DELETE, RequestMethod.GET})	
-	public String delete(Integer id) {
-		userService.delete(id);
-		return "redirect:/users";
-	}
-
-
 }
