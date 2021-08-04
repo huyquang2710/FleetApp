@@ -33,4 +33,9 @@ public class EmployeeService {
 		repository.deleteById(id);
 	}
 
+	public Employee findByUserName(String un) {
+		// TODO Auto-generated method stub
+		return repository.findByUsername(un);
+	}
+
 }
